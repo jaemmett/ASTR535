@@ -1,0 +1,9 @@
+.gif images show differential compilations of temperatures in the entire sky
+	white = hot (horizon, clouds, camera)
+	dark = locations of hot items in the last 5 minutes - used to infer direction/speed of clouds
+        vertical histogram along right side of image bins pixel levels across rows
+        displayed at top-left of image: UT time, sky level, sky standard deviation
+
+plot 1: sky standard deviation vs. UT time 
+
+plot 2: sky level vs. UT time 

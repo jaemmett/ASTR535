@@ -1,0 +1,56 @@
+Scheduled Q1 2016 3.5m NMSU Programs:
+
+	Scheduled:
+
+		NM01:
+
+			"Pre-Juno Characterization of Jupiter's Atmosphere with Hyperspectral Imaging"
+
+			PI: Nancy Chanover
+
+		NM02: 
+
+			"NMSU ASTR535 : graduate student training"
+
+			PI: Jon Holtzman
+
+		NM03:
+
+			"Mutual Events of (79360) 1997 CS29 Sila-Nunam"
+
+			PI: Nancy Chanover
+
+		NM04: 
+
+			"Halpha Imaging of Edge-on Galaxies in the CHANG-ES Sample"
+
+			PI: Carlos J. Vargas (Sponsor: Rene Walterbos)
+
+		NM05:
+
+			"Spectroscopy of Superthin Galaxies"
+
+			PI: Dmitry Bizyaev (APO/NMSU)
+
+		NM06:
+
+			
+			"NIR photometry of edge-on galaxies: MaNGA and superthins"
+
+			PI: Dmitry Bizyaev (APO/NMSU)
+
+		NM07:
+
+			"Calibrate LEGUE Pipeline Stellar Parameters with High Resolution Spectra"
+
+			PI: Kaike Pan
+
+	Logged (Q1 2015):
+
+		NM01:
+
+			"Atmospheric Parameters and Radial Velocities for Red Giants in Eclipsing Binaries"
+
+			PI: Jean McKeever
+		
+
