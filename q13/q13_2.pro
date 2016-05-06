@@ -37,9 +37,10 @@ FUNCTION circle_area,radius
 	return,area
 END
 
-FUNCTION sky_signal,sky_brightness,sky_radius
+FUNCTION sky_signal,sky_brightness,sky_radius,zero_point
 	sky_area=circle_area(sky_radius)
-	signal=sky_area*sky_area
+	count_rate_per_area=10.0^((sky_brightness-zero_point)/2.5)
+	signal=sky_area*count_rate_per_area
 	return,signal
 END
 
@@ -65,7 +66,10 @@ pro q13_2
 
 	;exposure_time=515.0
 
+	zero_point=23.5
+
         print,''
+	print,'S/N CALCULATOR'
 	print,'Parameters:'
 	print,'1. Telescope Aperture Radius [cm]     ',radius
 	print,'2. Sky Area Radius           [sq"]     ',sky_radius
@@ -77,6 +81,7 @@ pro q13_2
 	print,'8. Min. Wavelength           [A]      ',lr1
 	print,'9. Max. Wavelength           [A]      ',lr2
 	print,'10. Wavelength Interval      [A]      ',lr3
+	print,'11. Zero Point Magnitude     [mag]    ',zero_point
         print,''
 
         read,param_num,prompt='Enter parameter # to change or enter 0 to continue: '
@@ -91,6 +96,7 @@ pro q13_2
 	if param_num eq 8 then read,lr1,prompt='Min. Wavelength [A]: '
 	if param_num eq 9 then read,lr2,prompt='Max. Wavelength [A]: '
 	if param_num eq 10 then read,lr3,prompt='Wavelength Interval [A]: '
+	if param_num eq 10 then read,zero_point,prompt='Zero Point Magnitude [mag]: '
 	save,radius,sky_radius,sky_brightness,read_noise,exposure_time,magnitude,lr1,lr2,lr3,pixel_scale,filename='exposure_config.sav'
         goto, jump1
 
@@ -111,7 +117,7 @@ pro q13_2
 	total_count_rate=total(rate)*lr[2]
 
 	signal=exposure_time*total_count_rate
-	sky_signal=sky_signal(sky_brightness,sky_radius)
+	sky_signal=sky_signal(sky_brightness,sky_radius,zero_point)
 	read_signal=read_signal(read_noise,sky_radius,pixel_scale)
 
 	signal_to_noise=signal/sqrt(signal+sky_signal+read_signal)
